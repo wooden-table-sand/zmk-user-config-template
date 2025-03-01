@@ -14,14 +14,14 @@
 
         default_layer {
             bindings = <
-&kp F11     &kp F7  &kp F5  &kp F3    &kp F1    &kp F9               &kp F10    &kp F2     &kp F4      &kp F6     &kp F8  &kp F12
-&none       &kp N7  &kp N5  &kp N3    &kp N1    &kp N9               &kp N0     &kp N2     &kp N4      &kp N6     &kp N8  &none
-&kp C_PREV  &kp X   &kp C   &kp L     &kp F     &kp V                &kp AT     &kp SQT    &kp U       &kp P      &kp Q   &kp C_MUTE
-&kp C_PLAY  &kp R   &kp S   &kp N     &kp T     &kp G                &kp MINUS  &kp A      &kp E       &kp H      &kp I   &kp C_VOL_DN
-&kp C_NEXT  &kp Z   &kp W   &kp M     &kp D     &kp B                &kp BSLH   &kp O      &kp Y       &kp K      &kp J   &kp C_VOLUME_UP
-                    &kp UP  &kp DOWN                                                       &kp LEFT    &kp RIGHT
-                                      &kp RET   &kp LALT  &mo 2      &mkp RCLK  &mkp LCLK  &kp ESC
-                                      &kp LGUI  &mo 1     &kp TAB    &kp LCTRL  &kp SPACE  &kp LSHIFT
+&kp F11     &kp F7  &kp F5  &kp F3    &kp F1    &kp F9                 &kp F10    &kp F2     &kp F4      &kp F6     &kp F8  &kp F12
+&none       &kp N7  &kp N5  &kp N3    &kp N1    &kp N9                 &kp N0     &kp N2     &kp N4      &kp N6     &kp N8  &none
+&kp C_PREV  &kp X   &kp C   &kp L     &kp F     &kp V                  &kp AT     &kp SQT    &kp U       &kp P      &kp Q   &kp C_MUTE
+&kp C_PLAY  &kp R   &kp S   &kp N     &kp T     &kp G                  &kp MINUS  &kp A      &kp E       &kp H      &kp I   &kp C_VOL_DN
+&kp C_NEXT  &kp Z   &kp W   &kp M     &kp D     &kp B                  &kp BSLH   &kp O      &kp Y       &kp K      &kp J   &kp C_VOLUME_UP
+                    &kp UP  &kp DOWN                                                         &kp LEFT    &kp RIGHT
+                                      &kp RET   &kp LALT  &mo 2        &mkp RCLK  &mkp LCLK  &kp ESCAPE
+                                      &kp LGUI  &mo 1     &kp LCTRL    &kp TAB    &kp SPACE  &kp LSHIFT
             >;
         };
 
@@ -93,12 +93,12 @@
 
 &trackball_central_listener {
     input-processors =
-        // this gets it to the default installation orientation,,,,,,,,,,,,,,,,
-        // <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>,,,,,,,,,,,,
-        // multiply sensitivity by 1, divide by 3 (make it slower for scrolling),,,,,,,,,,,,,,,,
+        // this gets it to the default installation orientation,,,,,,,,,,,,,,,,,
+        // <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>,,,,,,,,,,,,,
+        // multiply sensitivity by 1, divide by 3 (make it slower for scrolling),,,,,,,,,,,,,,,,,
         <&zip_xy_scaler 1 100>,
-        // make this trackball output scrolling events by default instead of cursor movement,,,,,,,,,,,,,,,,
+        // make this trackball output scrolling events by default instead of cursor movement,,,,,,,,,,,,,,,,,
         <&zip_xy_to_scroll_mapper>,
-        // invert vertical scrolling so that the view moves in the same direction as the top of the trackball.,,,,,,,,,,,,,,,,
+        // invert vertical scrolling so that the view moves in the same direction as the top of the trackball.,,,,,,,,,,,,,,,,,
         <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>;
 };
