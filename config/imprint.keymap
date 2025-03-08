@@ -15,7 +15,7 @@
         default_layer {
             bindings = <
 &kp F11     &kp F7  &kp F5  &kp F3    &kp F1    &kp F9               &kp F10    &kp F2     &kp F4      &kp F6     &kp F8  &kp F12
-&none       &kp N7  &kp N5  &kp N3    &kp N1    &kp N9               &kp N0     &kp N2     &kp N4      &kp N6     &kp N8  &none
+&mo 3       &kp N7  &kp N5  &kp N3    &kp N1    &kp N9               &kp N0     &kp N2     &kp N4      &kp N6     &kp N8  &none
 &kp C_PREV  &kp X   &kp C   &kp L     &kp F     &kp V                &kp AT     &kp SQT    &kp U       &kp P      &kp Q   &kp C_MUTE
 &kp C_PLAY  &kp R   &kp S   &kp N     &kp T     &kp G                &kp MINUS  &kp A      &kp E       &kp H      &kp I   &kp C_VOL_DN
 &kp C_NEXT  &kp Z   &kp W   &kp M     &kp D     &kp B                &mkp LCLK  &kp O      &kp Y       &kp K      &kp J   &kp C_VOLUME_UP
@@ -25,55 +25,42 @@
             >;
         };
 
-        Symbols {
+        symbols {
             bindings = <
-&trans  &trans     &trans            &trans                &trans        &trans                      &trans     &trans      &trans                 &trans             &trans      &trans
-&trans  &trans     &trans            &trans                &trans        &trans                      &trans     &trans      &trans                 &trans             &trans      &trans
-&trans  &kp HASH   &kp LEFT_BRACE    &none                 &kp BSLH      &kp LG(LS(LBKT))            &kp AMPS   &kp EXCL    &kp SEMI               &kp RIGHT_BRACE    &kp GRAVE   &trans
-&trans  &kp EQUAL  &kp PERCENT       &kp LEFT_PARENTHESIS  &kp QMARK     &kp LS(LG(RBKT))            &kp PLUS   &kp PERIOD  &kp RIGHT_PARENTHESIS  &kp COLON          &kp SLASH   &trans
-&trans  &kp CARET  &kp LEFT_BRACKET  &kp LESS_THAN         &kp ASTERISK  &kp TILDE                   &mkp RCLK  &kp COMMA   &kp GREATER_THAN       &kp RIGHT_BRACKET  &kp DOLLAR  &trans
-                   &kp PAGE_UP       &kp PAGE_DOWN                                                                          &kp HOME               &kp END
-                                                           &trans        &trans            &trans    &none      &none       &kp DEL
-                                                           &trans        &trans            &trans    &none      &trans      &kp BSPC
+&trans  &trans     &trans            &trans                &trans        &trans                      &trans        &trans      &trans                 &trans             &trans      &trans
+&trans  &trans     &trans            &trans                &trans        &trans                      &trans        &trans      &trans                 &trans             &trans      &trans
+&trans  &kp HASH   &kp LEFT_BRACE    &none                 &kp BSLH      &kp LG(LS(LBKT))            &kp AMPS      &kp EXCL    &kp SEMI               &kp RIGHT_BRACE    &kp GRAVE   &trans
+&trans  &kp EQUAL  &kp PERCENT       &kp LEFT_PARENTHESIS  &none         &kp LS(LG(RBKT))            &kp PLUS      &kp PERIOD  &kp RIGHT_PARENTHESIS  &kp COLON          &kp SLASH   &trans
+&trans  &kp CARET  &kp LEFT_BRACKET  &kp LESS_THAN         &kp ASTERISK  &kp TILDE                   &kp QUESTION  &kp COMMA   &kp GREATER_THAN       &kp RIGHT_BRACKET  &kp DOLLAR  &trans
+                   &kp PAGE_UP       &kp PAGE_DOWN                                                                             &kp HOME               &kp END
+                                                           &trans        &trans            &trans    &none         &none       &kp DEL
+                                                           &trans        &trans            &trans    &none         &trans      &kp BSPC
             >;
         };
 
-        Keyboard_Control_Layer {
+        apps {
             bindings = <
 &trans       &trans        &trans        &trans        &trans        &trans                    &trans          &trans           &trans           &trans           &trans           &trans
 &bt BT_CLR   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4              &trans          &rgb_ug RGB_TOG  &rgb_ug RGB_EFF  &trans           &trans           &trans
 &sys_reset   &trans        &trans        &trans        &trans        &studio_unlock            &studio_unlock  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &rgb_ug RGB_BRI  &rgb_ug RGB_SPI  &sys_reset
 &bootloader  &trans        &trans        &trans        &trans        &trans                    &trans          &rgb_ug RGB_HUD  &rgb_ug RGB_SAD  &rgb_ug RGB_BRD  &rgb_ug RGB_SPD  &bootloader
-&to 4        &trans        &trans        &trans        &trans        &trans                    &trans          &trans           &trans           &trans           &trans           &to 4
+&none        &trans        &trans        &trans        &trans        &trans                    &mkp RCLK       &trans           &trans           &trans           &trans           &none
                            &trans        &trans                                                                                 &trans           &trans
                                                        &trans        &trans          &trans    &trans          &trans           &trans
                                                        &trans        &trans          &trans    &trans          &trans           &trans
             >;
         };
 
-        Auto_Mouse_Layer {
+        keyboard_control {
             bindings = <
-&trans  &trans  &trans     &trans     &trans     &trans            &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans     &trans     &trans     &trans            &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans     &trans     &trans     &trans            &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &mkp RCLK  &mkp MCLK  &mkp LCLK  &trans            &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans     &trans     &trans     &trans            &trans  &trans  &trans  &trans  &trans  &trans
-                &trans     &trans                                                  &trans  &trans
-                                      &trans     &trans  &trans    &trans  &trans  &trans
-                                      &trans     &trans  &trans    &trans  &trans  &trans
-            >;
-        };
-
-        factory_test {
-            bindings = <
-&kp N0  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5            &kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &kp N1
-&kp N2  &kp N3  &kp N4  &kp N5  &kp N6  &kp N7            &kp N8  &kp N9  &kp N0  &kp N1  &kp N2  &kp N3
-&kp N4  &kp N5  &kp N6  &kp N7  &kp N8  &kp N9            &kp N0  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5
-&kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &kp N1            &kp N2  &kp N3  &kp N4  &kp N5  &kp N6  &kp N7
-&kp N8  &kp N9  &kp N0  &kp N1  &kp N2  &kp N3            &kp N4  &kp N5  &kp N6  &kp N7  &kp N8  &kp N9
-                &kp N2  &kp N3                                            &kp N7  &kp N8
-                                &kp N1  &kp N2  &kp N3    &kp N4  &kp N5  &kp N6
-                                &kp N7  &kp N8  &kp N9    &kp N0  &kp N1  &kp N2
+&trans        &trans        &trans        &trans        &trans           &trans                &trans  &trans  &trans  &trans  &trans  &trans
+&trans        &trans        &trans        &trans        &trans           &trans                &trans  &trans  &trans  &trans  &trans  &trans
+&trans        &trans        &trans        &trans        &trans           &trans                &trans  &trans  &trans  &trans  &trans  &trans
+&bt BT_SEL 4  &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0     &bt BT_CLR            &trans  &trans  &trans  &trans  &trans  &trans
+&trans        &trans        &trans        &trans        &trans           &trans                &trans  &trans  &trans  &trans  &trans  &trans
+                            &trans        &trans                                                               &trans  &trans
+                                                        &trans           &trans      &trans    &trans  &trans  &trans
+                                                        &rgb_ug RGB_TOG  &trans      &trans    &trans  &trans  &trans
             >;
         };
     };
@@ -91,12 +78,12 @@
 
 &trackball_central_listener {
     input-processors =
-        // this gets it to the default installation orientation,,,,,,,,,,,,,,,,,,,,,,,,,,,
-        // <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>,,,,,,,,,,,,,,,,,,,,,,,
-        // multiply sensitivity by 1, divide by 3 (make it slower for scrolling),,,,,,,,,,,,,,,,,,,,,,,,,,,
+        // this gets it to the default installation orientation,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+        // <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>,,,,,,,,,,,,,,,,,,,,,,,,
+        // multiply sensitivity by 1, divide by 3 (make it slower for scrolling),,,,,,,,,,,,,,,,,,,,,,,,,,,,
         <&zip_xy_scaler 1 100>,
-        // make this trackball output scrolling events by default instead of cursor movement,,,,,,,,,,,,,,,,,,,,,,,,,,,
+        // make this trackball output scrolling events by default instead of cursor movement,,,,,,,,,,,,,,,,,,,,,,,,,,,,
         <&zip_xy_to_scroll_mapper>,
-        // invert vertical scrolling so that the view moves in the same direction as the top of the trackball.,,,,,,,,,,,,,,,,,,,,,,,,,,,
+        // invert vertical scrolling so that the view moves in the same direction as the top of the trackball.,,,,,,,,,,,,,,,,,,,,,,,,,,,,
         <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>;
 };
