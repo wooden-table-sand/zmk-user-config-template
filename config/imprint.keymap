@@ -9,41 +9,19 @@
 / {
     chosen { zmk,matrix-transform = &imprint_function_row; };
 
-    behaviors {
-        // Right Shift + Space produces underscore.
-        // This is to type in SCREAMING_SNAKE_CASE while
-        // Caps Lock is active.
-        //
-        // We don't do this for Left Shift because we
-        // still want to be able to do Left Shift + Space
-        // in case that means something to some app.
-        //
-        // Note that there is no Right Shift on your keyboard.
-        space_snake: space_snake {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-
-            // Normal binding: space
-            bindings = <&kp SPACE>, <&kp UNDERSCORE>;
-
-            // Condition: if shift is active, use underscore
-            mods = <(MOD_RSFT)>;
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             bindings = <
-&kp F11     &kp F7  &kp F5  &kp F3    &kp F1    &kp F9               &kp F10    &kp F2        &kp F4      &kp F6     &kp F8  &kp F12
-&mo 3       &kp N7  &kp N5  &kp N3    &kp N1    &kp N9               &kp N0     &kp N2        &kp N4      &kp N6     &kp N8  &mo 3
-&kp C_PREV  &kp X   &kp C   &kp L     &kp F     &kp V                &kp AT     &kp SQT       &kp U       &kp P      &kp Q   &kp C_MUTE
-&kp C_PLAY  &kp R   &kp S   &kp N     &kp T     &kp G                &mkp RCLK  &kp A         &kp E       &kp H      &kp I   &kp C_VOL_DN
-&kp C_NEXT  &kp Z   &kp W   &kp M     &kp D     &kp B                &mkp LCLK  &kp O         &kp Y       &kp K      &kp J   &kp C_VOLUME_UP
-                    &kp UP  &kp DOWN                                                          &kp LEFT    &kp RIGHT
-                                      &kp LGUI  &kp ESC  &mo 2       &mo 2      &kp TAB       &kp RGUI
-                                      &mo 1     &kp RET  &kp LALT    &kp LCTRL  &space_snake  &kp LSHIFT
+&kp F11     &kp F7  &kp F5  &kp F3    &kp F1    &kp F9               &kp F10    &kp F2     &kp F4      &kp F6     &kp F8  &kp F12
+&mo 3       &kp N7  &kp N5  &kp N3    &kp N1    &kp N9               &kp N0     &kp N2     &kp N4      &kp N6     &kp N8  &mo 3
+&kp C_PREV  &kp X   &kp C   &kp L     &kp F     &kp V                &kp AT     &kp SQT    &kp U       &kp P      &kp Q   &kp C_MUTE
+&kp C_PLAY  &kp R   &kp S   &kp N     &kp T     &kp G                &mkp RCLK  &kp A      &kp E       &kp H      &kp I   &kp C_VOL_DN
+&kp C_NEXT  &kp Z   &kp W   &kp M     &kp D     &kp B                &mkp LCLK  &kp O      &kp Y       &kp K      &kp J   &kp C_VOLUME_UP
+                    &kp UP  &kp DOWN                                                       &kp LEFT    &kp RIGHT
+                                      &kp LGUI  &kp ESC  &mo 2       &mo 2      &kp TAB    &kp RGUI
+                                      &mo 1     &kp RET  &kp LALT    &kp LCTRL  &kp SPACE  &kp LSHIFT
             >;
         };
 
